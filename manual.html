@@ -5,8 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Manual test</title>
 	<link rel="stylesheet" type="text/css" href="manual.css">
+    <script src="https://cdn.jsdelivr.net/npm/brython@3.8.9/brython.min.js">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/brython@3.8.9/brython_stdlib.js">
+</script>
+
 </head>
-<body>
+<body onload="brython()">
 	<nav class="topnav">
   <a href="index.html">Home</a>
   <a href="trail.html">	Voice-bot</a>
@@ -345,6 +350,48 @@
     </div>
 
 </div>
+<p id='zone'> </p>
+    <script type="text/python">
+    from browser import document
+    from browser.html import TABLE, TR, TH, TD
+    table = TABLE()
+  
+    row = TR() 
+  
+    row <= TH("Dichotomise")
+    row <= TH("Trait(A)")
+    row <= TH("Trait(B)")
+  
+    # add the row to the table
+    table <= row 
+      
+    # add a row 1
+    row = TR()
+    row <= TD("Attitude") + TD("Extrovert") + TD("Introvert")
+    table <= row
+       
+    # add a row 2
+    row = TR()
+    row <= TD("Information Gathering") + TD("Sensing") + TD("Intution")
+    table <= row
+
+    #add a row 3
+    row = TR()
+    row <= TD("Desion-Making") + TD("Thinking") + TD("Feeling")
+    table <= row
+
+    #add a row 4
+    row = TR()
+    row <= TD("Structure Orientation") + TD("Judging") + TD("Perceiving")
+    table <= row
+  
+      
+    # erase initial content
+    document['zone'].clear()
+      
+    # insert table in the element
+    document['zone'] <= table
+    </script>
 <script type="text/javascript" src="manual.js"></script>
 </body>
 </html>
