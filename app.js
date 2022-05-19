@@ -47,7 +47,7 @@ var questions = ["a..... expend energy, enjoy groups ............. b..... conser
         i++;
       speech.text = questions[i];
       synthesis.speak(speech);
-      if(i==2){ 
+      if(i==20){ 
         const m = document.getElementById("m");
           m.removeAttribute("hidden");
           m.setAttribute("aria-hidden", "false");     
